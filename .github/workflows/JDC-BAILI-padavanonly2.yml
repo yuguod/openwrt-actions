@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 ###############手动修改##############
-name: JDCloud-Baili-padavanonly2410
+name: JDCloud-Baili-padavanonly2
 
 on:
   repository_dispatch:
@@ -32,7 +32,7 @@ on:
 
 env:
   ###############手动修改##############
-  OPENWRT_NAME: padavanonly2410
+  OPENWRT_NAME: padavanonly2
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
   REPO_BRANCH: 2410
   FEEDS_CONF: nekokecore/feeds.conf.default
