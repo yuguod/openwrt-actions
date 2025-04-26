@@ -32,7 +32,7 @@ on:
 
 env:
   ###############手动修改##############
-  OPENWRT_NAME: padavanonly
+  OPENWRT_NAME: padavanonly2410
   REPO_URL: https://github.com/yuguod/padavanonly-mt798x-24.10
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF:  padavanonly/feeds.conf.default
