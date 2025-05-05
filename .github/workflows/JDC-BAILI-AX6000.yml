@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 ###############手动修改##############
-name: JDCloud-Baili-padavanonly2
+name: JDCloud-Baili-AX6000
 
 on:
   repository_dispatch:
@@ -32,13 +32,13 @@ on:
 
 env:
   ###############手动修改##############
-  OPENWRT_NAME: padavanonly2
+  OPENWRT_NAME: JDC-BAILI-AX6000
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
   REPO_BRANCH: 2410
-  FEEDS_CONF: nekokecore/feeds.conf.default
-  CONFIG_FILE: nekokecore/padavanonly2.config
-  DIY_P1_SH: nekokecore/diy-part1.sh
-  DIY_P2_SH: nekokecore/diy-part2.sh
+  FEEDS_CONF: jdc-ax6000/feeds.conf.default
+  CONFIG_FILE: jdc-ax6000/baili.config
+  DIY_P1_SH: jdc-ax6000/diy-part1.sh
+  DIY_P2_SH: jdc-ax6000/diy-part2.sh
   SSH_ACTIONS: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
