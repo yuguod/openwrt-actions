@@ -26,10 +26,10 @@ on:
     inputs:
       Tempoary_CONFIG:
         description: '配置文件'
-        default: 'd-team_newifi-d2'
+        default: 'newifi3'
         type: choice
         options:
-          - 'd-team_newifi-d2'
+          - 'newifi3'
           - 'd-team_newifi-d2-Clash'
           - 'd-team_newifi-d2-Lite'
       Tempoary_FLAG:
