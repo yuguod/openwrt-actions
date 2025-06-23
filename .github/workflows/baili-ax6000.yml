@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 ###############手动修改##############
-name: JDCloud-Baili-AX6000(test)
+name: JDCloud-Baili-AX6000(6.6)
 
 on:
   repository_dispatch:
@@ -32,9 +32,9 @@ on:
 
 env:
   ###############手动修改##############
-  OPENWRT_NAME: JDC-BAILI
-  REPO_URL: https://github.com/yuguod/padavanonly-mt798x-24.10
-  REPO_BRANCH: openwrt-24.10
+  OPENWRT_NAME: JDC-AX6000-6.6
+  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
+  REPO_BRANCH: openwrt-24.10-6.6
   FEEDS_CONF: jdc-ax6000/feeds.conf.default
   CONFIG_FILE: jdc-ax6000/baili.config
   DIY_P1_SH: jdc-ax6000/diy-part1.sh
@@ -196,11 +196,11 @@ jobs:
         touch release.txt
         echo "- 适配机型：京东云百里AX6000 (JDCloud_re-cp-03)" >> release.txt
         echo "- 使用源码：${{ env.REPO_URL }}" >> release.txt
-        echo "- 使用分支：Openwrt 24.10" >> release.txt
-        echo "- 内核版本：5.4.284" >> release.txt
+        echo "- 使用分支：openwrt-24.10-6.6" >> release.txt
+        echo "- 内核版本：6.6.93" >> release.txt
         echo "- 登录地址：${{ env.IP_ADDR }}" >> release.txt
         echo "- 登录账号：root" >> release.txt
-        echo "- 主要特性和插件：WiFi驱动使用v7.6.6.1-fw-20230808，默认支持IPv6，集成Docker，主要插件有luci-app-eqos-mtk，luci-app-passwall，luci-app-openclash，luci-app-homeproxy，luci-app-alist，应用过滤，组播转换，turboACC加速等" >> release.txt
+        echo "- 主要特性和插件：WiFi驱动使用v7.6.6.1-fw-20230808，默认支持IPv6，集成Docker，主要插件有luci-app-eqos-mtk，luci-app-passwall，luci-app-openclash，luci-app-homeproxy，应用过滤，组播转换，turboACC加速等" >> release.txt
         if [[ "${{ env.BUILD_DOCKERMAN }}" == '-docker' ]]; then
                 echo "- 已编译luci-app-dockerman" >> release.txt
         else
