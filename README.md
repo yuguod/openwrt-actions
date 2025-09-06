@@ -3,6 +3,7 @@
 # FIRMWARE 
 
 This project uses the P3TERX/Actions-OpenWrt project tool to compile the OpenWrt firmware. The firmware source code is integrated and debugged using the publicly available source codes from many experts and manufacturers. Due to my limited ability and testing conditions, the released firmware may still have various issues. If you use it, please test it yourself.
+https://github.com/yuguod/openwrt-actions
 
 # Actions-OpenWrt
 
