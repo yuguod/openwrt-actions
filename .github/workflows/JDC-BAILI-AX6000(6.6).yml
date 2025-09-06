@@ -178,7 +178,7 @@ jobs:
         rm -rf packages
         find ./ -iregex ".*\(bl31-uboot.fip\|gpt.bin\|preloader.bin\|bl2.bin\)$" -exec rm -rf {} +
         sudo -E apt-get -qq install rename
-        rename 's/.*${{ env.DEVICE_NAME }}/${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-$C${{ env.BUILD_DOCKERMAN }}/' *
+        rename 's/.*${{ env.DEVICE_NAME }}/${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.BUILD_DOCKERMAN }}/' *
         # rename 's/.*${{ env.DEVICE_NAME }}/${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.DEVICE_NAME }}${{ env.BUILD_DOCKERMAN }}/' *
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
