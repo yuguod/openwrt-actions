@@ -185,7 +185,8 @@ jobs:
                         if [ -f "$file" ]; then
                                 suffix="${file#*${val}}"
                                 new_name="${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${val}${{ env.BUILD_DOCKERMAN }}${suffix}"
-                                mv "$file" "$new_name"
+                                #mv -- "$file" "$new_name"
+                                mv -f -- "$file" "$new_name" 2>/dev/null || true
                                 echo "  Renamed: $file -> $new_name"
                         fi
                 done
@@ -213,7 +214,11 @@ jobs:
         else
                 echo "- 未编译luci-app-dockerman" >> release.txt
         fi
-        echo "release_tag=${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.UPLOAD_TAG_NAME }}${{ env.BUILD_DOCKERMAN }}" >> $GITHUB_OUTPUT
+        #echo "release_tag=${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.UPLOAD_TAG_NAME }}${{ env.BUILD_DOCKERMAN }}" >> $GITHUB_OUTPUT
+        release_tag="${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.UPLOAD_TAG_NAME }}${{ env.BUILD_DOCKERMAN }}"
+        # 移除非法字符，只保留字母、数字、下划线、点、破折号
+        release_tag=$(echo "$release_tag" | sed 's/[^a-zA-Z0-9_.-]/-/g')
+        echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 发布固件至Release
